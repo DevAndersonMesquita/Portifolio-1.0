@@ -1,0 +1,474 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p{
+    font: 15px Arial, sans-serif;
+}
+
+
+/* Estilo para o cabeçalho -------------------------------------------------------------*/
+header{
+    background-color: #131313;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}   
+.nome{
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #211fb3;
+    font-size: 25px;
+}
+.material-symbols-outlined{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+ul{
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content:  space-around;
+    gap: 40px;
+}
+.navlinks{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-bottom: #211fb3 2px solid;
+    border: 1px solid #211fb3;
+    border-radius: 5px;
+}
+.navlinks:hover{
+    transition: 0.5s;
+    background-color: #211fb3;
+    color: white;
+} 
+         /*apresentação --------------------------------------------------------------------*/
+
+         main{
+    margin-top: 0px;
+
+         }
+         body{
+    background-color: #101010
+
+         }
+section#apresentacao{
+    width: 100%;
+    margin: 40px;
+    max-width: 1350px;
+    color: white;
+    height: 600px;
+    
+}
+section#apresentacao h2{
+    color: #211fb3;
+    font-size: 50px;
+    font-family: "Zalando Sans Expanded", sans-serif;
+    margin: 5px 0;
+}
+section#apresentacao p{
+    color: white;
+    font-size: 23px;
+} 
+.inicio{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.sobre{
+    padding: 20px;
+}
+            /* projetos --------------------------------------------------------------*/  
+
+
+
+
+section#projetos{
+    text-align: center;
+    background-color: #161616e8;
+    color: white;
+    width: 100%;
+    padding: 70px;
+}   
+h3{
+    font-size: 40px;
+    font-weight: bold ;
+    margin: 0px 0;
+    
+}
+.projetos{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+}
+.fundo{
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    
+}
+.cards{
+    background-color: #161616e8;
+    padding: 5px;
+    height: 500px;
+    border-radius: 20px;
+    margin: 0px;
+    box-shadow: 5px 5px 15px 3px #211fb3;
+}
+.cards:hover{
+    transition: 0.5s;
+    transform: scale(1.02);
+}
+video{
+    width: 350px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 0px;
+}
+.descricao{
+    background-color: #161616e8;
+    height: 260px;
+    margin-top: 10px;
+    color: black;
+
+    
+}
+.hero-text{
+    height: 135px;
+}
+.descricao p{
+    font-size: 17px;
+    margin-top: 20px;
+color: rgb(255, 255, 255);
+}
+.tema{
+    margin-top: 20px;
+    font: bolder 20px Arial, sans-serif;
+    display: flex;
+    margin-left: 30px;
+}
+
+.span-ferramentas{
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    margin-left: 15px;
+ 
+}
+span{
+    border: 2px solid #363636;
+    color: white;
+    padding: 4px;
+    border-radius: 15px;
+    font-size: 14px;
+    background-color: rgb(56, 56, 56);
+    box-shadow: 3px 3px 10px 2px #211fb3;
+}
+.tecnologias{
+    height: 50px;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 30px;
+    gap: 20px;
+    
+}
+.imggit{
+    width: 50px;
+    height: 50px;   
+    cursor: pointer;
+    color: white;
+}
+/* ================= TECNOLOGIAS ================= */
+
+section#tecnologias{
+    background-color: #171717;
+    color: white;
+    padding: 80px;
+    text-align: center;
+}
+
+section#tecnologias h2{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.container-tecnologias{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    color: black;
+}
+
+.card-tech{
+    background-color: #686868;
+    padding: 30px;
+    border-radius: 20px;
+    width: 250px;
+    box-shadow: 5px 5px 15px 3px rgb(54, 54, 54);
+    transition: 0.4s;
+}
+
+.card-tech:hover{
+    transform: scale(1.03);
+}
+
+.card-tech h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.lista-tech{
+    display: flex;
+    
+    gap: 10px;
+    justify-content: center;
+}
+
+.lista-tech span{
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+
+
+   /*contato ------------------------------------------------------------*/
+
+
+section#contato{
+    background-color: #131313;
+    color: white;
+    text-align: center;
+    padding: 100px;
+}
+section#contato h2{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.botoes{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+button{
+    background-color: #131313;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover{
+    transition: 0.5s;
+}   
+        /* sobre ----------------------------------------------------------------------*/
+.Sobre{
+    margin-top: 70px;
+}
+
+      /* footer ---------------------------------------------------------------*/
+footer{
+    background-color: #101010;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-size: 14px;
+}
+footer a{
+    color: #3c3a9c;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* ================= RESPONSIVIDADE ================= */
+#itens {
+    display: flex;
+}
+
+@media (max-width: 1024px) {
+    #itens {
+    display: flex;
+}
+
+
+
+    #itens {
+    overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: 
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            transform 0.3s ease;
+
+        flex-direction: column;
+        align-items: center;
+        background-color: #131313;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        gap: 20px;
+        padding: 0;
+    }
+
+    #itens.active {
+        display: flex;
+        max-height: 300px;
+        opacity: 1;
+        transform: translateY(0);
+        padding: 20px 0;
+    }
+
+    .material-symbols-outlined {
+        display: block;
+    }
+
+    ul{
+        display: none;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* Ajusta seção apresentação */
+    section#apresentacao {
+        margin: 20px;
+        height: auto;
+    }
+
+    section#apresentacao h2 {
+        font-size: 35px;
+    }
+
+    section#apresentacao p {
+        font-size: 18px;
+    }
+
+    /* Projetos */
+    .fundo {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .cards {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Tecnologias */
+    .container-tecnologias {
+        gap: 20px;
+    }
+
+    .card-tech {
+        width: 100%;
+        max-width: 300px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    /* Header */
+    header {
+        align-items: center;
+        gap: 15px;
+    }
+
+    ul {
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* Apresentação */
+    section#apresentacao {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    section#apresentacao h2 {
+        font-size: 28px;
+    }
+
+    section#apresentacao p {
+        font-size: 16px;
+    }
+
+    /* Projetos */
+    section#projetos {
+        padding: 40px 20px;
+    }
+
+    .fundo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .hero-text {
+        height: auto;
+    }
+
+    /* Tecnologias */
+    section#tecnologias {
+        padding: 40px 20px;
+    }
+
+    /* Contato */
+     .botoes {
+             /* permite quebrar linha */
+        justify-content: center;
+        gap: 2px;
+    }
+
+    button {
+        padding: 10px 15px;     /* reduz padding no mobile */
+        font-size: 10px;        /* reduz fonte */
+    }
+
+    section#contato {
+        padding: 60px 20px;
+    }
+
+    footer {
+        padding: 30px 15px;
+    }
+}
