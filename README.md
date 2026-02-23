@@ -5,7 +5,7 @@ Este projeto foi desenvolvido para apresentar minhas habilidades como desenvolve
 
 ## 🌐 Deploy
 
-🔗 Acesse online: https://devandersonmesquita.github.io/Portifolio-1.0/
+🔗 Acesse online: https://portifolio-1-0-tau.vercel.app/
 
 ## 🛠️ Tecnologias utilizadas
 
