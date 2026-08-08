@@ -1,182 +1,341 @@
 <!DOCTYPE html>
-<HTML lang="pt-br">
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded&display=swap" rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portifólio | Anderson M.</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer ></script>
-    </head>
-    <body>
-        <header>
-            <a class="nome" href="#apresentacao">Anderson Mesquita Da Silva</a>
-            <span  id="menu-icon" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-                <ul id ="itens">
-                    <a class="navlinks" href="#tecnologias">Tecnologias</a>
-                    <a class="navlinks" href="#projetos">Projetos</a>
-                    <a class="navlinks" href="#contato">Contato</a>
-                </ul>
-            
-        </header>
+<html lang="pt-br" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anderson Mesquita — Full-Stack Developer</title>
+    <meta name="description" content="Portfólio de Anderson Mesquita, desenvolvedor Full-Stack em formação, focado em React, Node.js e PostgreSQL.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a class="nome" href="#apresentacao">
+                <span class="nome-mono">&lt;</span>Anderson Mesquita<span class="nome-mono">/&gt;</span>
+            </a>
+
+            <div class="header-controles">
+                <button id="btn-lang" class="botao-icone botao-lang" type="button" aria-label="Change language">
+                    <span data-lang-atual>PT</span>
+                </button>
+
+                <button id="btn-tema" class="botao-icone botao-tema" type="button" aria-label="Toggle theme">
+                    <span class="icone sol">☀️</span>
+                    <span class="icone lua">🌙</span>
+                </button>
+
+                <span id="menu-icon" class="material-symbols-outlined">menu</span>
+            </div>
+
+            <ul id="itens">
+                <li><a class="navlinks" href="#sobre" data-i18n="nav.sobre">GET /sobre</a></li>
+                <li><a class="navlinks" href="#formacao" data-i18n="nav.formacao">GET /formação</a></li>
+                <li><a class="navlinks" href="#projetos" data-i18n="nav.projetos">GET /projetos</a></li>
+                <li><a class="navlinks" href="#tecnologias" data-i18n="nav.tecnologias">GET /tecnologias</a></li>
+                <li><a class="navlinks" href="#contato" data-i18n="nav.contato">POST /contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
         <section id="apresentacao">
-            <div class="inicio">
-                <h2>Olá, seja bem vindo!</h2>
-                <p>Sou um Engenheiro de Software/Desenvolvedor Fullstack em formação apaixonado por criar soluções inovadoras e eficientes.
-                    Tenho experiência em HTML, CSS, JavaScript, Node.js, Git e GitHub e outras tecnologias web.</p>
+            <div class="apresentacao-grid">
+                <div class="inicio">
+                    <p class="eyebrow" data-i18n="hero.eyebrow">STATUS · 200 OK</p>
+                    <h1 data-i18n="hero.titulo">Olá, eu sou o Anderson.</h1>
+                    <p class="hero-sub" data-i18n="hero.subtitulo">
+                        Desenvolvedor Full-Stack em formação, construindo interfaces e APIs com atenção a detalhes.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projetos" class="btn-cta btn-cta-primario" data-i18n="hero.cta1">Ver projetos</a>
+                        <a href="#contato" class="btn-cta btn-cta-secundario" data-i18n="hero.cta2">Entrar em contato</a>
+                    </div>
                 </div>
-           <div class="sobre">
-               <h2>Sobre</h2>
-               <p>Sou apaixonado por tecnologia e desenvolvimento de software, com foco em criar soluções que
-                   unam funcionalidade, organização e uma boa experiência para o usuário.
-                   Atualmente estou em formação como Desenvolvedor Full Stack, sempre buscando evoluir por 
-                   meio de estudos contínuos, prática constante e desenvolvimento de projetos reais. 
-                   Acredito que boas soluções nascem da combinação entre código limpo, boas práticas e vontade
-                 de aprender. Meu objetivo é crescer profissionalmente na área de desenvolvimento de
-                   sistemas, contribuindo com projetos que gerem valor real e impacto positivo, enquanto
-                     evoluo como desenvolvedor e profissional de tecnologia.
-                </p>
+
+                <div class="resposta-api" aria-hidden="true">
+                    <div class="resposta-api-topo">
+                        <span class="dot dot-1"></span>
+                        <span class="dot dot-2"></span>
+                        <span class="dot dot-3"></span>
+                        <span class="resposta-api-rota">GET /anderson</span>
+                    </div>
+                    <pre class="resposta-api-corpo"><code><span class="tok-brace">{</span>
+  <span class="tok-key">"name"</span>: <span class="tok-string">"Anderson Mesquita"</span>,
+  <span class="tok-key">"role"</span>: <span class="tok-string" data-i18n="hero.json.role">"Full-Stack Developer (em formação)"</span>,
+  <span class="tok-key">"stack"</span>: [<span class="tok-string">"React"</span>, <span class="tok-string">"Node.js"</span>, <span class="tok-string">"PostgreSQL"</span>],
+  <span class="tok-key">"status"</span>: <span class="tok-string" data-i18n="hero.json.status">"aberto_a_oportunidades"</span>
+<span class="tok-brace">}</span></code></pre>
+                </div>
             </div>
         </section>
 
+        <section id="sobre">
+            <div class="sobre-grid">
+                <div class="avatar-wrap">
+                    <div class="avatar" id="avatar-container">
+                        <img src="imagens/foto-perfil.jpg" alt="Foto de Anderson Mesquita">
+                    </div>
+                </div>
+                <div class="sobre-texto">
+                    <p class="eyebrow" data-i18n="sobre.eyebrow">GET /sobre</p>
+                    <h2 data-i18n="sobre.titulo">Sobre mim</h2>
+                    <p data-i18n="sobre.paragrafo">
+                        Sou apaixonado por tecnologia e desenvolvimento de software, com foco em criar soluções que
+                        unam funcionalidade, organização e uma boa experiência para o usuário. Atualmente estou em
+                        formação como Desenvolvedor Full Stack, sempre buscando evoluir por meio de estudos
+                        contínuos, prática constante e desenvolvimento de projetos reais. Acredito que boas soluções
+                        nascem da combinação entre código limpo, boas práticas e vontade de aprender. Meu objetivo é
+                        crescer profissionalmente na área de desenvolvimento de sistemas, contribuindo com projetos
+                        que gerem valor real e impacto positivo, enquanto evoluo como desenvolvedor e profissional
+                        de tecnologia.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <main>
+        <section id="formacao">
+            <p class="eyebrow" data-i18n="formacao.eyebrow">GET /formação</p>
+            <h2 data-i18n="formacao.titulo">Formação</h2>
+
+            <ul class="lista-formacao">
+                <li class="item-formacao">
+                    <div class="item-formacao-topo">
+                        <p class="item-formacao-titulo" data-i18n="formacao.eng.titulo">Engenharia de Software</p>
+                        <p class="item-formacao-periodo" data-i18n="formacao.eng.periodo">Em andamento · 2º período</p>
+                    </div>
+                    <p class="item-formacao-instituicao">Faculdade Anhanguera</p>
+                    <p class="item-formacao-desc" data-i18n="formacao.eng.desc">Criação de sistemas web e back-end; participação em projetos e eventos acadêmicos.</p>
+                </li>
+                <li class="item-formacao">
+                    <div class="item-formacao-topo">
+                        <p class="item-formacao-titulo" data-i18n="formacao.tec.titulo">Técnico em Eletrotécnica</p>
+                        <p class="item-formacao-periodo">Jan 2024 – Jan 2025</p>
+                    </div>
+                    <p class="item-formacao-instituicao">Escola Técnica Sandra Silva</p>
+                    <p class="item-formacao-desc" data-i18n="formacao.tec.desc">Automação, máquinas e eletricidade.</p>
+                </li>
+            </ul>
+
+            <div class="idiomas">
+                <span class="idiomas-label" data-i18n="formacao.idiomas">Idiomas</span>
+                <span class="lista-tech-idioma" data-i18n="formacao.portugues">Português (nativo)</span>
+                <span class="lista-tech-idioma" data-i18n="formacao.ingles">Inglês (técnico)</span>
+            </div>
+        </section>
+
         <section id="projetos">
-            <h3>Projetos</h3>
+            <p class="eyebrow eyebrow-claro" data-i18n="projetos.eyebrow">GET /projetos</p>
+            <h2 data-i18n="projetos.titulo">Projetos</h2>
+
             <div class="fundo">
-                
-                <div class="cards">
+
+                <article class="cards">
+                    <div class="cards-placeholder">
+                        <div class="cards-placeholder-topo">
+                            <span class="dot dot-1"></span>
+                            <span class="dot dot-2"></span>
+                            <span class="dot dot-3"></span>
+                            <span class="resposta-api-rota">GET /syncops</span>
+                        </div>
+                        <div class="cards-placeholder-corpo">{ }</div>
+                    </div>
+                    <div class="descricao">
+                        <div class="hero-text">
+                            <p class="tema">SyncOps</p>
+                            <p class="descricao-relogio" data-i18n="projetos.syncops.desc">Dashboard operacional de checklists para padronizar rotinas de TI, com geração automática de relatórios para chamados (ITSM) e esteira de CI/CD.</p>
+                        </div>
+
+                        <div class="span-ferramentas">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Docker</span>
+                            <span>GitHub Actions</span>
+                        </div>
+
+                        <div class="tecnologias">
+                            <a href="https://github.com/Krl0sEd/SyncOps" aria-label="Ver repositório do SyncOps no GitHub"><img class="imggit" src="imagens/icons8-repository-50 (1).png" alt=""></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cards">
+                    <div class="cards-placeholder">
+                        <img src="imagens/PrintNology.jpg" alt="APP-Nology">
+                    </div>
+                    <div class="descricao">
+                        <div class="hero-text">
+                            <p class="tema">APP-Nology</p>
+                            <p class="descricao-relogio" data-i18n="projetos.appnology.desc">Aplicação web de cálculo de cashback para uma fintech fictícia, com backend em Python/FastAPI e banco PostgreSQL (Neon).</p>
+                        </div>
+
+                        <div class="span-ferramentas">
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>PostgreSQL</span>
+                        </div>
+
+                        <div class="tecnologias">
+                            <a href="https://app-nology.vercel.app/" aria-label="Abrir APP-Nology"><img class="imggit" src="imagens/open_in_new_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></a>
+                            <a href="https://github.com/DevAndersonMesquita/APP-NOLOGY" aria-label="Ver repositório do APP-Nology no GitHub"><img class="imggit" src="imagens/icons8-repository-50 (1).png" alt=""></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cards">
+                    <div class="cards-placeholder">
+                        <img src="imagens/Printstarfilmes.jpg" alt="StarFilmes">
+                        
+                    </div>
+                    <div class="descricao">
+                        <div class="hero-text">
+                            <p class="tema">StarFilmes</p>
+                            <p class="descricao-relogio" data-i18n="projetos.starfilmes.desc">Sistema web para gerenciamento e visualização de filmes, com cadastro e login de usuários.</p>
+                        </div>
+
+                        <div class="span-ferramentas">
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>PostgreSQL</span>
+                            <span>Sequelize</span>
+                        </div>
+
+                        <div class="tecnologias">
+                            <a href="https://starfilmes-aqdcg3cdgse7b2cn.southcentralus-01.azurewebsites.net/" aria-label="Abrir StarFilmes"><img class="imggit" src="imagens/open_in_new_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></a>
+                            <a href="https://github.com/DevAndersonMesquita/Star-Filmes" aria-label="Ver repositório do StarFilmes no GitHub"><img class="imggit" src="imagens/icons8-repository-50 (1).png" alt=""></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cards">
                     <video src="imagens/calculadoraprojeto.mp4" controls></video>
                     <div class="descricao">
                         <div class="hero-text">
                             <p class="tema">Calculadora</p>
-                            <p class="descricao-relogio"> Ótimo para melhorar o raciocínio lógico na<br> programação </p>
+                            <p class="descricao-relogio" data-i18n="projetos.calc.desc">Ótimo para melhorar o raciocínio lógico na programação.</p>
                         </div>
-                            
+
                         <div class="span-ferramentas">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
                         </div>
 
-                        <div class="tecnologias"> 
-                             <a href="https://calculadora-omega-coral.vercel.app/"> <img  class="imggit" src="imagens/open_in_new_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></a>
-                            <a href="https://github.com/DevAndersonMesquita/Calculadora"><img  class="imggit" src="imagens/icons8-repository-50 (1).png" alt=""></a>
-                        </div>   
+                        <div class="tecnologias">
+                            <a href="https://calculadora-omega-coral.vercel.app/" aria-label="Abrir projeto Calculadora"><img class="imggit" src="imagens/open_in_new_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></a>
+                            <a href="https://github.com/DevAndersonMesquita/Calculadora" aria-label="Ver repositório no GitHub"><img class="imggit" src="imagens/icons8-repository-50 (1).png" alt=""></a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="cards">
+                </article>
+
+                <article class="cards">
                     <video src="imagens/relogio.mp4" controls></video>
                     <div class="descricao">
                         <div class="hero-text">
-                            <p class="tema">Relógio Digital</p>
-                            <p class="descricao-relogio">Projeto simples para o inicio de uma jornada</p>
+                            <p class="tema" data-i18n="projetos.relogio.titulo">Relógio Digital</p>
+                            <p class="descricao-relogio" data-i18n="projetos.relogio.desc">Projeto simples para o início de uma jornada.</p>
                         </div>
-                       
 
                         <div class="span-ferramentas">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
                         </div>
-                        
-                        <div class="tecnologias"> 
-                             <a href="https://relogio-digital-five-rust.vercel.app/""> <img class="imggit" src="imagens/open_in_new_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></a>
-                            <a href="https://github.com/DevAndersonMesquita/Relogio-Digital"><img  class="imggit" src="imagens/icons8-repository-50 (1).png" alt=""></a>
-                            
-                        </div>
-                    </div>  
-                </div>
 
-                <div class="cards">
-                    <video src="imagens/portifolio.mp4" controls></video>
-                    <div class="descricao">
-                        <div class="hero-text">
-                            <p class="tema">Portifólio</p>
-                            <p class="descricao-relogio">Projeto pessoal para demonstrar minhas habilidades e projetos desenvolvidos</p>
+                        <div class="tecnologias">
+                            <a href="https://relogio-digital-five-rust.vercel.app/" aria-label="Abrir projeto Relógio Digital"><img class="imggit" src="imagens/open_in_new_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></a>
+                            <a href="https://github.com/DevAndersonMesquita/Relogio-Digital" aria-label="Ver repositório no GitHub"><img class="imggit" src="imagens/icons8-repository-50 (1).png" alt=""></a>
                         </div>
-                       
+                    </div>
+                </article>
 
-                        <div class="span-ferramentas">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        
-                        <div class="tecnologias"> 
-                            <a href="https://portifolio-anderson-mesquita.vercel.app/"> <img  class="imggit" src="imagens/open_in_new_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></a>
-                            <a href="https://github.com/DevAndersonMesquita/Portifolio"><img  class="imggit" src="imagens/icons8-repository-50 (1).png" alt=""></a>
-                            
-                        </div>
-                    </div>  
-                </div>
                 
-            </div> 
+
+            </div>
+        </section>
+
+        <section id="tecnologias">
+            <p class="eyebrow" data-i18n="tech.eyebrow">GET /tecnologias</p>
+            <h2 data-i18n="tech.titulo">Tecnologias</h2>
+
+            <div class="container-tecnologias">
+
+                <div class="card-tech">
+                    <h4 data-i18n="tech.frontend">Front-end</h4>
+                    <div class="lista-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>React.js</span>
+                    </div>
+                </div>
+
+                <div class="card-tech">
+                    <h4 data-i18n="tech.backend">Backend</h4>
+                    <div class="lista-tech">
+                        <span>Node.js</span>
+                        <span>TypeScript</span>
+                        <span>Python</span>
+                        <span>Express</span>
+                        <span>FastAPI</span>
+                    </div>
+                </div>
+
+                <div class="card-tech">
+                    <h4 data-i18n="tech.dados">Banco de Dados</h4>
+                    <div class="lista-tech">
+                        <span>PostgreSQL</span>
+                        <span>Sequelize</span>
+                        <span>Prisma</span>
+                    </div>
+                </div>
+
+                <div class="card-tech">
+                    <h4 data-i18n="tech.cloud">Cloud & DevOps</h4>
+                    <div class="lista-tech">
+                        <span>Azure</span>
+                        <span>GitHub Actions</span>
+                        <span>CI/CD</span>
+                    </div>
+                </div>
+
+                <div class="card-tech">
+                    <h4 data-i18n="tech.ferramentas">Ferramentas</h4>
+                    <div class="lista-tech">
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>Figma</span>
+                        <span>Postman</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contato">
+            <p class="eyebrow eyebrow-claro" data-i18n="contato.eyebrow">POST /contato</p>
+            <h2 data-i18n="contato.titulo">Vamos conversar</h2>
+            <p class="contato-sub" data-i18n="contato.subtitulo">Aberto a oportunidades como desenvolvedor Full-Stack júnior.</p>
+            <div class="botoes">
+                <a class="btn-contato" href="mailto:andersonmdev1@gmail.com">Email</a>
+                <a class="btn-contato" href="https://github.com/DevAndersonMesquita">GitHub</a>
+                <a class="btn-contato" href="https://www.linkedin.com/in/andersonmesquitadev/">LinkedIn</a>
+                <a class="btn-contato" href="https://wa.me/5521992170748">WhatsApp</a>
+            </div>
         </section>
     </main>
 
-           <section id="tecnologias">
-  <h2>Tecnologias</h2>
-
-  <div class="container-tecnologias">
-
-    <div class="card-tech">
-      <h4>Linguagens</h4>
-      <div class="lista-tech">
-        <span>JavaScript</span>
-      </div>
-    </div>
-
-    <div class="card-tech">
-      <h4>Linguagens</h4>
-      <div class="lista-tech">
-        <span>HTML</span>
-        <span>CSS</span>
-      </div>
-    </div>
-
-    <div class="card-tech">
-      <h4>Backend</h4>
-      <div class="lista-tech">
-        <span>Node.js</span>
-        <span>Express</span>
-        <span>API</span>
-      </div>
-    </div>
-
-    <div class="card-tech">
-      <h4>Ferramentas</h4>
-      <div class="lista-tech">
-        <span>Git</span>
-        <span>GitHub</span>
-        <span>Postman</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-    <section id="contato">
-        <h2>Contatos</h2>
-        <div class="botoes">
-            <button><a class="navlinks" href="mailto:andersonmdev1@gmail.com">Email</a></button>
-            <button><a class="navlinks" href="https://github.com/DevAndersonMesquita">GitHub</a></button>
-            <button><a class="navlinks" href="https://www.linkedin.com/in/anderson-mesquita-910109362/">LinkedIn</a></button>
-            <button><a class="navlinks" href="https://wa.me/5521992170748">WhatsApp</a></button>
-        </div>
-    </section>
-                
-        <footer>
-            <h4>“Tecnologia conecta ideias e constrói o futuro.”</h4>
-        <p>&copy; <strong>2026 Anderson Mesquita da Silva</strong> </p>
-
+    <footer>
+        <h4 data-i18n="footer.frase">"Tecnologia conecta ideias e constrói o futuro."</h4>
+        <p data-i18n="footer.copy">&copy; 2026 Anderson Mesquita da Silva</p>
     </footer>
 
 </body>
